@@ -11,6 +11,9 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome - fontawesome@... -->
+    <script src="https://kit.fontawesome.com/f0b5dd3e25.js" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" type="text/css" href="css/style.css">
     
     <title>TP - Site web</title>

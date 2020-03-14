@@ -12,7 +12,7 @@
   <div class="col-md-4">
 
     <div class="card" style="width: 18rem;">
-      <img src="/images/google-font.png" class="card-img-top" alt="Logo Digital School Excelia Group">
+      <img src="/images/google-font.png" class="card-img-top" alt="Logo Google Font">
       <div class="card-body">
         <h5 class="card-title">Google Font</h5>
         <p class="card-text">Utilisation de “Google Font” dans un projet de site internet. Après avoir récupérer une “Font” sur le site de “Google”, nous allons l’utiliser sur cette page.</p>
