@@ -29,13 +29,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="nav-link" href="/">Accueil <span class="sr-only"></span></a>
+                  <a class="nav-link" href="/">Google Font <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Features</a>
+                  <a class="nav-link" href="/font-awesome.php">Font Awesome</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Pricing</a>
+                  <a class="nav-link" href="/google-map.php">Google Map</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/youtube.php">Youtube</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/owl-carousel.php">OWL Carousel</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/api.php">API</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
