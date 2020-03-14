@@ -14,6 +14,10 @@
     <!-- Font Awesome - fontawesome@... -->
     <script src="https://kit.fontawesome.com/f0b5dd3e25.js" crossorigin="anonymous"></script>
     
+    <!-- SwiperJS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    
+    <!-- Style custom -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     
     <title>TP - Site web</title>
@@ -44,7 +48,7 @@
                   <a class="nav-link" href="/youtube.php">Youtube</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/owl-carousel.php">OWL Carousel</a>
+                  <a class="nav-link" href="/swiperjs.php">Swiper JS</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/api.php">API</a>

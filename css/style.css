@@ -1,4 +1,11 @@
+/* GENERAL */
 body {
   font-family: 'Open Sans', sans-serif;
   background: url("/images/logo-excelia-group-digital-school-la-rochelle.jpg") right bottom fixed no-repeat;
+}
+
+/* SWIPER JS */
+.swiper-container {
+    width: 600px;
+    height: 300px;
 }
