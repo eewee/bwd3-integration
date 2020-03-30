@@ -3,9 +3,7 @@
 <div class="row">
   <div class="col-md-8">
     
-    <h1>
-      Utilisation d'une API
-    </h1>
+    <h1>Utilisation d'une API</h1>
     
     <p>
       Utiliser la structure d'URL suivante pour afficher le "name", "created_at", "bio" et "blog" :
@@ -32,9 +30,7 @@
 <div class="row">
   <div class="col-md-12">
   
-    <h2>
-      Simple lecture d'un JSON / CSV et afficher les données.
-    </h2>
+    <h2>Simple lecture d'un JSON / CSV et afficher les données.</h2>
     <p>
       Dépôt GitHub "The Johns Hopkins University" qui réalise la carte du monde des infections du coronavirus :
       <ul>
@@ -52,9 +48,7 @@
       </ul>
     </p>
     
-    <h2>
-      Lecture d'un JSON (coronavirus) :
-    </h2>
+    <h2>Lecture d'un JSON (coronavirus) :</h2>
     
     <?php
     $dataAll = file_get_contents('https://coronavirus-19-api.herokuapp.com/all'); 
@@ -107,7 +101,35 @@
         } ?>
       </tbody>
     </table>
-  
+    <hr>
+
+    <h2>Clearbit</h2>
+    <?php
+    $apiSecret = "REMPLIR AVEC VOTRE SECRET KEY API CLEARBIT";
+    //$ip = "REMPLIR AVEC VOTRE ADRESSE IPV4";
+
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+      CURLOPT_RETURNTRANSFER => 1,
+      CURLOPT_URL            => "https://person-stream.clearbit.com/v2/combined/find?email=alex@clearbit.com",
+      //CURLOPT_URL          => "https://reveal.clearbit.com/v1/companies/find?ip=".$ip,
+      CURLOPT_USERPWD        => $apiSecret,
+    ));
+
+    $result = curl_exec($curl);
+    if(!curl_exec($curl)){
+        die('Error: "' . curl_error($curl) . '" - Code: ' . curl_errno($curl));
+    }
+    curl_close($curl);
+
+    $res = json_decode($result);
+    echo "Nom complet : ".$res->person->name->fullName."<hr>";
+    echo "Localisation : ".$res->person->location."<hr>";
+    echo "Profil Linkedin : https://fr.linkedin.com/".$res->person->linkedin->handle."<hr>";
+    echo "Emails de la société trouvés : ".implode($res->company->site->emailAddresses, ", ")."<hr>";
+    echo "<pre>".var_export($res, true)."</pre>";
+    ?>
+
   </div>
 </div>
 
