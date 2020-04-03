@@ -55,6 +55,9 @@
                   <a class="nav-link" href="/api.php">API</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="/email.php">Email</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
               </ul>
