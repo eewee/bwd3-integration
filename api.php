@@ -105,32 +105,36 @@
 
     <h2>Clearbit</h2>
     <?php
-    $apiSecret = "REMPLIR AVEC VOTRE SECRET KEY API CLEARBIT";
-    //$ip = "REMPLIR AVEC VOTRE ADRESSE IPV4";
+    // REMPLIR AVEC VOTRE SECRET KEY API CLEARBIT
+    $apiSecret = "";
+    // REMPLIR AVEC VOTRE ADRESSE IPV4    
+    $ip = "";
 
-    $curl = curl_init();
-    curl_setopt_array($curl, array(
-      CURLOPT_RETURNTRANSFER => 1,
-      CURLOPT_URL            => "https://person-stream.clearbit.com/v2/combined/find?email=alex@clearbit.com",
-      //CURLOPT_URL          => "https://reveal.clearbit.com/v1/companies/find?ip=".$ip,
-      CURLOPT_USERPWD        => $apiSecret,
-    ));
+    if (isset($apiSecret) && !empty($apiSecret)) {
+      $curl = curl_init();
+      curl_setopt_array($curl, array(
+        CURLOPT_RETURNTRANSFER => 1,
+        CURLOPT_URL            => "https://person-stream.clearbit.com/v2/combined/find?email=alex@clearbit.com",
+        //CURLOPT_URL          => "https://reveal.clearbit.com/v1/companies/find?ip=".$ip,
+        CURLOPT_USERPWD        => $apiSecret,
+      ));
 
-    $result = curl_exec($curl);
-    if(!curl_exec($curl)){
-        die('Error: "' . curl_error($curl) . '" - Code: ' . curl_errno($curl));
+      $result = curl_exec($curl);
+      if(!curl_exec($curl)){
+          die('Error: "' . curl_error($curl) . '" - Code: ' . curl_errno($curl));
+      }
+      curl_close($curl);
+
+      $res = json_decode($result);
+      echo "Nom complet : ".$res->person->name->fullName."<hr>";
+      echo "Localisation : ".$res->person->location."<hr>";
+      echo "Profil Linkedin : https://fr.linkedin.com/".$res->person->linkedin->handle."<hr>";
+      echo "Emails de la société trouvés : ".implode($res->company->site->emailAddresses, ", ")."<hr>";
+      echo "<pre>".var_export($res, true)."</pre>";
     }
-    curl_close($curl);
-
-    $res = json_decode($result);
-    echo "Nom complet : ".$res->person->name->fullName."<hr>";
-    echo "Localisation : ".$res->person->location."<hr>";
-    echo "Profil Linkedin : https://fr.linkedin.com/".$res->person->linkedin->handle."<hr>";
-    echo "Emails de la société trouvés : ".implode($res->company->site->emailAddresses, ", ")."<hr>";
-    echo "<pre>".var_export($res, true)."</pre>";
     ?>
 
   </div>
 </div>
 
-<?php require_once "footer.php"; ?>   
+<?php require_once "footer.php"; ?>
