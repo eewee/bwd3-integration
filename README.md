@@ -6,6 +6,8 @@ Intégrer différentes solutions :
 * YouTube
 * Swiper JS
 * API/Json
+* Favicon
+* Sendinblue
 
 # GIT
 
