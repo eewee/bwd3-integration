@@ -16,14 +16,31 @@
     
     <p>
       <u>Icône ajouté sur un formulaire :</u><br>
+      <?php
+      // INIT
+      $email    = "";
+
+      // Si le formulaire a été validé :
+      if (isset($_POST)) {
+        
+        // Si le champ "email" existe ET s'il est rempli
+        if (isset($_POST['form_email']) && !empty($_POST['form_email'])) {
+          $email = $_POST['form_email'];  
+        }
+
+        // Afficher les champs du formulaire :
+        echo "Email    : ".$email."<br>";
+      }
+      ?>
+
       <form>
         <div class="form-group">
-          <label for="exampleInputEmail1"><i class="fas fa-envelope"></i> Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <label for="form_email"><i class="fas fa-envelope"></i> Email</label>
+          <input type="email" name="form_email" value="<?php echo $email; ?>" class="form-control" id="form_email" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1"><i class="fas fa-key"></i> Mot de passe</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <label for="form_password"><i class="fas fa-key"></i> Mot de passe</label>
+          <input type="password" name="form_password" class="form-control" id="form_password">
         </div>
         <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Valider</button>
       </form>
