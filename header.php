@@ -16,7 +16,8 @@
     <script src="https://kit.fontawesome.com/f0b5dd3e25.js" crossorigin="anonymous"></script>
     
     <!-- SwiperJS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <!--<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     
     <!-- Style custom -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
